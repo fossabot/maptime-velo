@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>VéloIsère</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+  <link href='style.css' rel='stylesheet' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <script src='https://rawgithub.com/mapbox/polyline/master/src/polyline.js'></script>
+  <script src='https://rawgithub.com/mapbox/wellknown/master/wellknown.js'></script>
+  <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+</head>
+
+  <body>
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+          VéloIsère
+        </div>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><button id="get_position" type="button" class="btn btn-primary">Get position</button></li>
+          <li><form class="navbar-form" role="search">
+            <div class="form-group">
+              <input id="address_search" type="text" class="form-control" placeholder="Search">
+            </div>
+            <button id="get_address" class="btn btn-success" onclick="return false;">Get address</button>
+          </form></li>
+          <li class="dropdown">
+            <button id="route-menu" class="dropdown-toggle btn btn-info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" disabled>Get route <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><button id="II-route" class="menu-btn btn btn-info">Itinisère</button></li>
+              <li><button id="MM-route" class="menu-btn btn btn-info">Métromobilité</button></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+  <div id="itiInfos">
+    <div class="row">
+      <div class="col-md-3" id="itiTime">
+        <img src="./images/time.svg" class="itiIcon">
+        <span id="itiTimeLabel" class="itiLabel"></span>
+      </div>
+        <div class="col-md-3" id="itiDistance">
+          <img src="./images/distance.svg" class="itiIcon">
+          <span id="itiDistanceLabel" class="itiLabel"></span>
+        </div>
+      <div class="col-md-3" id="itiUp">
+        <img src="./images/up.svg" class="itiIcon">
+        <span id="itiUpLabel" class="itiLabel"></span>
+      </div>
+      <div class="col-md-3" id="itiDown">
+        <img src="./images/down.svg" class="itiIcon">
+        <span id="itiDownLabel" class="itiLabel"></span>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+
+</html>
